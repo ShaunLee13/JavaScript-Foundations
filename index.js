@@ -4,9 +4,9 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-let principal = 200000;
-let interestRate = 0.05;
-let years = 30;
+var principal = 200000;
+var interestRate = 0.05;
+var years = 30;
 let name = "Shaun";
 
 
@@ -33,13 +33,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-let compound = Math.pow((1+ monthlyInterestRate), periods);
-
-let numerator = monthlyInterestRate * compound;
-let denominator = compound - 1;
-
-
-let monthlyRate = principal * (numerator / denominator);
+    let compound = Math.pow((1+ monthlyInterestRate), periods);
+    let numerator = monthlyInterestRate * compound;
+    let denominator = compound - 1;
+    let monthlyRate = principal * (numerator / denominator);
 
 
 // 🏡 Task 3: Function
@@ -48,7 +45,19 @@ let monthlyRate = principal * (numerator / denominator);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator() {
 
+    monthlyInterestRate = interestRate / 12;
+    periods = years * 12;
+    compound = Math.pow((1+ monthlyInterestRate), periods);
+    numerator = monthlyInterestRate * compound;
+    denominator = compound - 1;
+    monthlyRate = principal * (numerator / denominator);
+
+    return `${name}, your monthly rate is ${monthlyRate.toFixed(2)}`;
+}
+
+console.log(mortgageCalculator());
 
 
 
@@ -56,10 +65,21 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 
 For example,
-mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
+mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+function mortgageCalculator2(principal, interestRate, years) {
 
+    monthlyInterestRate = interestRate / 12;
+    periods = years * 12;
+    compound = Math.pow((1+ monthlyInterestRate), periods);
+    numerator = monthlyInterestRate * compound;
+    denominator = compound - 1;
+    monthlyRate = principal * (numerator / denominator);
+    return `${name}, your monthly rate is ${monthlyRate.toFixed(2)}`;
+}
+
+console.log(mortgageCalculator2(150000, 0.05, 30));
 
 
 
@@ -69,6 +89,28 @@ mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
+function mortgageCalculator3(principal, interestRate, years, creditScore) {
+
+    if(creditScore > 740){
+        interestRate = interestRate * 0.95;
+    }else if(creditScore <= 740 && creditScore >= 660){
+        interestRate;
+    }else if(creditScore < 660){
+        interestRate = interestRate * 1.05;
+    }
+
+    monthlyInterestRate = interestRate / 12;
+    periods = years * 12;
+    compound = Math.pow((1+ monthlyInterestRate), periods);
+    numerator = monthlyInterestRate * compound;
+    denominator = compound - 1;
+    monthlyRate = principal * (numerator / denominator);
+
+
+    return name + ", your monthly rate is " + monthlyRate.toFixed(2);
+}
+
+console.log(mortgageCalculator3(200000, 0.05, 30, 600));
 
 
 
