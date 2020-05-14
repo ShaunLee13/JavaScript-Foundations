@@ -146,7 +146,7 @@ function variableInterestRate(principal, interestRate, years){
         denominator = compound - 1;
         monthlyRate = principal * (numerator / denominator);
 
-        console.log(`${name}, with an interest rate of ${varRate}, your monthly rate is $${Math.round(monthlyRate)`);
+        console.log(`${name}, with an interest rate of ${varRate}, your monthly rate is $${Math.round(monthlyRate)}`);
     }
 }
 
