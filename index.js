@@ -146,9 +146,8 @@ function variableInterestRate(principal, interestRate, years){
         denominator = compound - 1;
         monthlyRate = principal * (numerator / denominator);
 
-        console.log(name + ", with an interest rate of " + varRate + ", your monthly rate is $" + Math.round(monthlyRate));
+        console.log(`${name}, with an interest rate of ${varRate}, your monthly rate is $${Math.round(monthlyRate)`);
     }
-
 }
 
 variableInterestRate(200000, 0.04, 30);
@@ -156,7 +155,7 @@ variableInterestRate(200000, 0.04, 30);
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+/*  🏡 Add  `}`Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
 
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
